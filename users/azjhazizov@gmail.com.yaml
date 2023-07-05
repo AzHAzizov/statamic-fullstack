@@ -1,4 +1,10 @@
 name: Aziz
 super: true
+avatar: download.png
 id: 4ffd5a07-4823-4b7d-9c1e-36310ae35fd1
 password_hash: $2y$10$WdVjGScraQzJTCemkxrqG.Ak5ADGD1UWDS55jCfh/Z8zEfTq575Hq
+preferences:
+  locale: en
+  collections:
+    posts:
+      after_save: create_another

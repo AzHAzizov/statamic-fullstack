@@ -8,6 +8,7 @@ RUN apt-get install git -y
 RUN apt-get -y update \
       && apt-get install -y libicu-dev\
       && docker-php-ext-configure intl \
+      && docker-php-ext-install exif \
       && docker-php-ext-install intl
 
 RUN apt-get update && apt-get install -y \

@@ -18,10 +18,13 @@ RUN apt-get update && apt-get install -y \
 RUN apt-get -y update \
       && apt-get install -y libicu-dev\
       && docker-php-ext-configure intl \
+      && docker-php-ext-install exif \
       && docker-php-ext-install intl
 
 
 RUN wget https://getcomposer.org/installer -O - -q | php -- --install-dir=/bin --filename=composer --quiet
 
+RUN composer global require statamic/cli \
+&& echo 'export PATH="$HOME/.composer/vendor/bin:$PATH"' >> ~/.bashrc \
 
 WORKDIR /var/www/ 
